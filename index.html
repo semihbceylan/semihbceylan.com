@@ -26,7 +26,8 @@
 </style>
 </head>
 <body>
-	<div class="spacer layer2 hidden"></div>
+	<div class="grid"></div>
+	<!--<div class="spacer layer2 hidden"></div>-->
 	<nav class="navbar">
 		<ul class="navbar-nav">
 			<li class="logo">
@@ -120,49 +121,30 @@
 <!-- Page Content -->
 	<main>
 	<!-- Header/Home -->
-	<header  id="home">
+	<header id="home">
 		<section>
 			<hgroup style="padding: 0 0 20px 0;">
-				<h1 id="hacker" data-value="SEMIHBCEYLAN">SEMIHBCEYLAN</h1> 
-				<h3>Software Engineer</h3>
+				<!--<h1 id="hacker" data-value="SEMIHBCEYLAN">SEMIHBCEYLAN</h1>-->
 			</hgroup>
-			<img src="./images/pp2.jpg" alt="boy" width="40%" style="border-radius:20%;">
+			<div class="hero card modern-border">
+				<h1>Semih B. Ceylan</h1>
+				<img src="./images/pp2.jpg" alt="boy" class="pp">
+				
+				<p>
+					Hi, I am Semih. A fast learner and a very curious student at Istanbul Technical University with a major in Computer Engineering.<br>
+					I like to create things, ever since I coded my first programs in batch language when I was 13.<br>
+					I was thrilled by the power that I hold. I knew I had to be a programmer since then.<br>
+					<br>
+					Feel free to contact me via ceylans20@.itu.edu.tr
+				</p>
+				
+			</div>
 		</section>
 	</header>
 	
 	<!-- About Section -->
 	<article id="about">
-		<h2>Semih B. Ceylan</h2>
-		<hr style="width:200px">
-		<p>
-			Hi, I am Semih. A fast learner and a very curious student at Istanbul Technical University with a major in Computer Engineering.<br>
-			I like to create things, ever since I coded my first programs in batch language when I was 13.<br>
-			I was thrilled by the power that I hold. I knew I had to be a programmer since then.<br>
-			<br>
-			Feel free to contact me via ceylans20@.itu.edu.tr
-		</p>
-		
-		<!--
-		<div class="w3-row w3-padding-16 w3-section w3-light-grey">
-		<div class="w3-quarter w3-section">
-			<span class="w3-xlarge">11+</span><br>
-			Partners
-		</div>
-		<div class="w3-quarter w3-section">
-			<span class="w3-xlarge">55+</span><br>
-			Projects Done
-		</div>
-		<div class="w3-quarter w3-section">
-			<span class="w3-xlarge">89+</span><br>
-			Happy Clients
-		</div>
-		<div class="w3-quarter w3-section">
-			<span class="w3-xlarge">150+</span><br>
-			Meetings
-		</div>
-		</div>
-		-->
-		<section id="experiences"  style="background-color: white;" class="hidden">
+		<section id="experiences"  style="background-color: white;" class="hidden modern-border">
 			<h2 class="black-text semih-center">Experiences</h3>
 			<div class="container est-logo">
 				<img src="data:image/png;base64,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" alt="" class="w3-center" style="width:200px">
@@ -174,10 +156,10 @@
 		</section>
 		
 		
-		<section id="education" style="background-color: white;" class="hidden">
+		<section id="education" style="background-color: white;" class="hidden modern-border">
 			<h2 class="black-text semih-center">Education</h3>
 			<div class="container est-logo">
-				<img src="https://pbs.twimg.com/profile_images/1352213508969132034/RekWtUSO_400x400.jpg" alt="" class="" style="width:160px">
+				<img src="https://kadikoyalevalatlibilsem.meb.k12.tr/meb_iys_dosyalar/34/12/760960/resimler/2023_05/k_09174123_Logo.jpg" alt="" class="" style="width:160px">
 				<img src="https://www.iaflolimpiyatlari.com/images/logo.png" alt="" class="" style="width:160px">
 				<img src="https://upload.wikimedia.org/wikipedia/tr/9/90/%C4%B0T%C3%9C_logo.png" alt="" class="" style="width:160px">
 			</div>
@@ -246,7 +228,7 @@
 	<!-- Portfolio Section -->
 	<article class="hidden dark" id="photos">
 		<h2>My Photos</h2>
-		<hr style="width:200px">
+		
 
 		<div class="image-grid-row">
 			<div class="image-grid-column">
@@ -266,7 +248,7 @@
 	<!-- Contact Section -->
 	<article id="contact" class="hidden">
 		<h2>Contact Me</h2>
-		<hr style="width:200px" id="contactme">
+		
 
 		<div>
 		<p><i class="fa fa-map-marker fa-fw"></i>İstanbul, Turkey</p>

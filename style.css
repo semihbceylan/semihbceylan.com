@@ -1,3 +1,4 @@
+/* CSS for my portfolio*/
 :root{
 	font-size: 16px;
 	font-family: Arial, Helvetica, sans-serif;
@@ -7,13 +8,19 @@
 	--bg-medium:#23232e;
 	--bg-dark:#141418;
 	--transition-speed: 600ms;
-	
+	--font-main:  ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+	--border-radius-main: 10px;
+	--modern-border-light: 1px solid rgba(255, 255, 255, 0.2);
+	--modern-border-dark: 0 solid #e5e7eb;
+	--blur-bg: rgba(255, 255, 255, 0.05);
+	--blur-filter: blur(3px);
 }
 
 *{	
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
+	font-family:var(--font-main);
 }
 
 body{
@@ -21,6 +28,27 @@ body{
 	color:white;
 }
 
+.modern-border {
+	border-radius: var(--border-radius-main);
+	border: var(--modern-border-light);
+}
+
+
+.grid {	
+	height: 100%;
+	width: 100%;
+	position: fixed;
+	z-index: -2;
+	top: 0;
+	left: 0;
+	background: white;
+	opacity: 0.1;
+	mask-image: linear-gradient(90deg, #fff 1px, transparent 0), linear-gradient(180deg, #fff 1px, transparent 0);
+	-webkit-mask-image: linear-gradient(90deg, #fff 1px, transparent 0), linear-gradient(180deg, #fff 1px, transparent 0);
+	mask-size: 3rem 3rem;
+	-webkit-mask-size: 3rem 3rem;
+	background: radial-gradient(#be00ff, #00e7ff);
+}
 .light{
 	background-color: var(--bg-light);
 }
@@ -41,10 +69,12 @@ body{
 }
 .layer1 {
 	background-image: url(images/wave-haikei.svg);
+    mask-image: linear-gradient(to top, rgba(0, 0, 0, 1) 20%, rgba(0, 0, 0, 0) 100%);
 }
 .layer2 {
 	position: relative;
 	overflow: hidden;
+	mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 20%, rgba(0, 0, 0, 0) 100%);
 }
 .layer2::before{
 	content: "";
@@ -80,14 +110,9 @@ body::-webkit-scrollbar-thumb{
 
 .est-logo {
 	margin:auto;
-	filter: grayscale(100);
 }
 .est-logo img{
-
 	margin:auto;
-}
-.est-logo:hover{
-	filter: grayscale(0);
 }
 @media only screen and (max-width: 600px) {#main {margin-left: 0}}
 @keyframes header-blur {
@@ -127,10 +152,10 @@ p{
 	color: var(--text-secondary);
 	font-size: large;
 	align-items: center;
-	backdrop-filter: blur(3px);
-	background-color: rgba(255, 255, 255, 0.05);
-	border: 1px solid rgba(255, 255, 255, 0.1);
-	border-radius: 6px;
+	background: var(--blur-bg);
+	backdrop-filter: var(--blur-filter);
+	border: var(--modern-border-light);
+	border-radius: var(--border-radius-main);
 	box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.1);
 	cursor: pointer;  
 	display: flex;
@@ -186,7 +211,7 @@ hr{
 }
 
 header{
-	text-align: center;
+	
 }
 main{
 	text-align: justify;
@@ -312,6 +337,7 @@ form input, form textarea {
 .logo svg {
 	transform: rotate(0);
 	transition: transform var(--transition-speed);
+	width: 1.5rem;
 }
 
 .navbar:hover .logo svg{
@@ -321,10 +347,11 @@ form input, form textarea {
   
 #hacker {
 	font-family: 'Space Mono', monospace;
+	/*font-family: "Fira Mono", monospace, sans-serif;*/
 	font-size: clamp(2rem, 6vw, 6rem);
 	color: white;
 	padding: 0rem clamp(1rem, 2vw, 3rem);
-	border-radius: clamp(0.4rem, 0.75vw, 1rem);
+	border-radius: var(--border-radius-main);
   }
   
 #hacker:hover {
@@ -332,10 +359,24 @@ form input, form textarea {
 	color: var(--bg-dark);
   }
   
+.pp {
+	width:30%;
+	border-radius: var(--border-radius-main);
+}
   body.menu-toggled > .button > span {
 	color: rgb(30, 30, 30);
   }
-  
+
+.hero {
+	background-color: var(--bg-medium);
+}
+
+.card {
+	border: var(--modern-border-light);
+	border-radius: var(--border-radius-main);
+	padding:20px;
+	
+}
 
 .image-grid-row {
 	display: flex;
@@ -355,6 +396,8 @@ form input, form textarea {
 	margin-top: 8px;
 	vertical-align: middle;
 	width: 100%;
+	border-radius: var(--border-radius-main);
+	border: var(--modern-border);
 }
 
 .hidden{
