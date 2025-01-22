@@ -14,6 +14,8 @@
 	--modern-border-dark: 0 solid #e5e7eb;
 	--blur-bg: rgba(255, 255, 255, 0.05);
 	--blur-filter: blur(3px);
+	--shadow-border-main: 0 0 0 2px rgba(0, 0, 0, 0.08);
+	--shadow-border-vert: 0 2px 2px 0 rgba(0, 0, 0, 0.04);
 }
 
 *{	
@@ -164,9 +166,11 @@ button{
 
 .flex-row {
 	display: flex;
-	flex-direction: row;
+	flex-direction: column;
 	justify-content: space-between;
-	height: 3rem;
+	/*height: 3rem;*/
+	align-items: center;
+	justify-content: center;
 }
 
 .social-icons {
@@ -178,11 +182,18 @@ button{
 }
 
 .social-icons i{
-	font-size: 1.6rem;
+	font-size: 2rem;
 	color: white;
-	padding: 0.4rem;
+	padding: 0.5rem;
+	height: 3rem;
+	/*mask-image: linear-gradient(180deg, #fff 10%, transparent 100%);*/
 	border: var(--modern-border-light);
 	border-radius: var(--border-radius-main);
+}
+
+.social-icons i:hover {
+	background-color: rgba(255, 255, 255, 0.1);
+	border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .half-divide{
@@ -208,10 +219,6 @@ a:active {
 
 hr{
 	text-align: left;
-}
-
-header{
-	
 }
 
 main{
@@ -244,9 +251,7 @@ section{
 .semih-center {
 	text-align: center;
 }
-#education div{
-	background-color: white;
-}
+
 #experiences .container, #education .container{
 	width: 100%;
 	display: flex;
@@ -261,6 +266,7 @@ section{
 	width: 100%;
 	margin-top: 2vh;
 	padding: 1rem;
+	box-shadow:var(--shadow-border-main), var(--shadow-border-vert);
 }
 
 #contact .card {
@@ -317,6 +323,7 @@ section{
 	min-width: 2rem;
 	margin: 0 1.5rem;
 	color: #519dd7;
+	text-align: center;
 }
 
 .fa-primary {
@@ -327,6 +334,9 @@ section{
 }
 .fa-primary, .fa-secondary {
 	transition: color 600ms;
+}
+textarea{
+	resize: vertical;
 }
 form input, form textarea {
 	font-size: 1rem;
@@ -362,8 +372,10 @@ input:focus-visible, textarea:focus-visible{
 /* ---------------------------------- */
   
   .pp {
-	width:30%;
+	width: 240px;
 	border-radius: var(--border-radius-main);
+	border: var(--modern-border-light);
+	mask-image: linear-gradient(180deg, #fff 50%, transparent 100%);
 }
   body.menu-toggled > .button > span {
 	color: rgb(30, 30, 30);
@@ -377,7 +389,13 @@ input:focus-visible, textarea:focus-visible{
 	border: var(--modern-border-light);
 	border-radius: var(--border-radius-main);
 	padding:20px;
-	background-color: var(--bg-medium);	
+	background-color: var(--bg-medium);
+	box-shadow:var(--shadow-border-main), var(--shadow-border-vert);
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	gap: 1rem;
 }
 
 .image-grid-row {
@@ -439,6 +457,9 @@ input:focus-visible, textarea:focus-visible{
 	main{
 		margin: 0;
 	}
+	section {
+		width: 80%;
+	}
 	#experiences .container, #education .container{
 		flex-direction: column;
 	}
@@ -450,6 +471,11 @@ input:focus-visible, textarea:focus-visible{
 		flex: 100%;
 		max-width: 100%;
 	}
+	.flex-row {
+		
+		flex-direction: column;
+		height: fit-content;
+	}
 	footer{
 		margin:6rem;
 	}
@@ -457,10 +483,10 @@ input:focus-visible, textarea:focus-visible{
 
 /*Large Screens*/
 @media only screen and (min-width:600px) {
-	main{
-		/* margin-left: 15rem;
-		margin-right: 15rem; */
-	}
+	/*main{
+		margin-left: 15rem;
+		margin-right: 15rem;
+	}*/
 	.navbar{
 		top: 0;
 		width: 5rem;
