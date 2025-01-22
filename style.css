@@ -13,7 +13,7 @@
 	--modern-border-light: 1px solid rgba(255, 255, 255, 0.2);
 	--modern-border-dark: 0 solid #e5e7eb;
 	--blur-bg: rgba(255, 255, 255, 0.05);
-	--blur-filter: blur(3px);
+	--blur-filter: blur(4px);
 	--shadow-border-main: 0 0 0 2px rgba(0, 0, 0, 0.08);
 	--shadow-border-vert: 0 2px 2px 0 rgba(0, 0, 0, 0.04);
 }
@@ -44,11 +44,12 @@ body{
 	left: 0;
 	background: white;
 	opacity: 0.1;
-	mask-image: linear-gradient(90deg, #fff 1px, transparent 0), linear-gradient(180deg, #fff 1px, transparent 0);
-	-webkit-mask-image: linear-gradient(90deg, #fff 1px, transparent 0), linear-gradient(180deg, #fff 1px, transparent 0);
+	--grid-thickness: 2px;
+	mask-image: linear-gradient(90deg, #fff var(--grid-thickness), transparent 0), linear-gradient(180deg, #fff var(--grid-thickness), transparent 0);
+	-webkit-mask-image: linear-gradient(90deg, #fff var(--grid-thickness), transparent 0), linear-gradient(180deg, #fff var(--grid-thickness), transparent 0);
 	mask-size: 3rem 3rem;
 	-webkit-mask-size: 3rem 3rem;
-	background: radial-gradient(#be00ff, #00e7ff);
+	background: radial-gradient(#a55cff, #b77fff);
 }
 .light{
 	background-color: var(--bg-light);
@@ -119,6 +120,7 @@ p {
 
 h1 {
 	font-size: 2rem;
+	text-align: center;
 }
 
 .button {
@@ -133,7 +135,7 @@ h1 {
 	backdrop-filter: var(--blur-filter);
 	border: var(--modern-border-light);
 	border-radius: var(--border-radius-main);
-	box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.1);
+	box-shadow: var(--shadow-border-main), var(--shadow-border-vert);
 	cursor: pointer;  
 	display: flex;
 	gap: 5px;
@@ -246,6 +248,49 @@ section{
 
 #about {
 	padding-top: 0;
+}
+
+#skills {
+	display: flex;
+	flex-direction: row;
+	gap: 1rem;
+}
+.column {
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+}
+
+.skill-card {
+	border-radius: var(--border-radius-main);
+	border: var(--modern-border-light);
+	width: 100%;
+	padding: 20px;
+	background: var(--blur-bg);
+	backdrop-filter: var(--blur-filter);
+	box-shadow: var(--shadow-border-main), var(--shadow-border-vert);
+}
+
+.skill-icons {
+	display: flex;
+	justify-content: space-evenly;
+	align-items: center;
+	height: 2rem;
+}
+
+.skill-icon {
+    background-color: white;
+    height: 2.4rem;
+    width: 2.4rem;
+    align-items: center;
+    border-radius: 0.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.skill-icon img {
+	height: 2rem;
 }
 
 .semih-center {
@@ -372,7 +417,7 @@ input:focus-visible, textarea:focus-visible{
 /* ---------------------------------- */
   
   .pp {
-	width: 240px;
+	width: 400px;
 	border-radius: var(--border-radius-main);
 	border: var(--modern-border-light);
 	mask-image: linear-gradient(180deg, #fff 50%, transparent 100%);
@@ -423,7 +468,7 @@ input:focus-visible, textarea:focus-visible{
 .hidden{
 	opacity: 0;
 	filter: blur(5px);
-	transition: all 1s;
+	transition: all 0.6s;
 }
 .show{
 	opacity: 1;
@@ -461,6 +506,9 @@ input:focus-visible, textarea:focus-visible{
 		width: 80%;
 	}
 	#experiences .container, #education .container{
+		flex-direction: column;
+	}
+	#skills {
 		flex-direction: column;
 	}
 	article{
