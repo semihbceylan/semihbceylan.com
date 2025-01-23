@@ -231,7 +231,7 @@
 	
 			<p>Let's get in touch. Send me a message:</p>
 	
-			<form action="mailto:ceylans20@itu.edu.tr" method="post" enctype="text/plain" target="_blank" style="display: flex;flex-direction: column;gap: 0.6rem;">
+			<!--<form action="mailto:ceylans20@itu.edu.tr" method="post" enctype="text/plain" target="_blank" style="display: flex;flex-direction: column;gap: 0.6rem;">
 				<input type="text" placeholder="Name" required name="Name">
 				<textarea placeholder="Email" required name="Email" rows="10" cols="30"></textarea>
 				<input type="text" placeholder="Subject" required name="Subject">
@@ -240,8 +240,30 @@
 				<button type="submit" class="button">
 					<i class="fa fa-paper-plane"></i>Send Mail
 				</button>
-				
+			</form>-->
+
+			<form style="display: flex;flex-direction: column;gap: 0.6rem;">
+				<input id="fullName" type="text" placeholder="Full Name"  required onKeyUp="sendEmail()">
+				<input id="subject" type="text" placeholder="Subject"  required onKeyUp="sendEmail()">
+				<textarea id="comment" placeholder="Comment"  required onKeyUp="sendEmail()"></textarea>
 			</form>
+
+			<div class="flex justify-center">
+				<a href="" id="send_email"><button class="button" href=""><i class="fa fa-paper-plane"></i>Send Email</button></a>
+			</div>
+
+			<script>
+				function sendEmail() {
+					var link = document.getElementById('send_email');
+					var name = document.getElementById('fullName').value;
+					var subject = document.getElementById('subject').value;
+					var message = document.getElementById('comment').value + " --------------------\n " + name;
+					var email = "ceylans20@itu.edu.tr";
+					var href = "mailto:" + email + "?subject=" + subject + "&body=" + message;
+					console.log(href);
+					link.setAttribute("href", href);
+				}
+			</script>
 		</div>
 	</section>
 	
@@ -251,7 +273,6 @@
 			<a href="https://www.linkedin.com/in/semihbceylan/" target="_blank"><i class="fa-brands fa-linkedin fa-2xl"></i></a>
 			<a href="https://github.com/semihbceylan" target="_blank"><i class="fa fa-github fa-2xl"></i></a>
 		</div>
-		<p class="semih-center">Copyright</p>
 	</footer>
 	</main>
 </body>
