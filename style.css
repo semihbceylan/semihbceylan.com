@@ -13,7 +13,7 @@
 	--modern-border-light: 1px solid rgba(255, 255, 255, 0.2);
 	--modern-border-dark: 0 solid #e5e7eb;
 	--blur-bg: rgba(255, 255, 255, 0.05);
-	--blur-filter: blur(4px);
+	--blur-filter: blur(2px);
 	--shadow-border-main: 0 0 0 2px rgba(0, 0, 0, 0.08);
 	--shadow-border-vert: 0 2px 2px 0 rgba(0, 0, 0, 0.04);
 }
@@ -64,16 +64,6 @@ body {
 	background-color: var(--bg-medium);
 }
 
-@keyframes carousel {
-	from {
-		background-position-x: 50px;
-	}
-
-	to {
-		background-position-x: 0px;
-	}
-}
-
 body::-webkit-scrollbar {
 	width: 0.25rem;
 }
@@ -111,12 +101,6 @@ footer {
 	width: 100%;
 	justify-content: center;
 	flex-direction: row;
-}
-
-@media only screen and (max-width: 600px) {
-	#main {
-		margin-left: 0
-	}
 }
 
 @keyframes header-blur {
@@ -295,13 +279,24 @@ section {
 
 #skills {
 	display: flex;
-	flex-direction: row;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
 	gap: 1rem;
 }
 
 .column {
 	display: flex;
 	flex-direction: column;
+	width: 100%;
+	gap: 1rem;
+}
+
+.row {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
 	width: 100%;
 	gap: 1rem;
 }
@@ -557,6 +552,10 @@ body.menu-toggled>.button>span {
 	main {
 		margin: 0;
 	}
+	
+	#main {
+		margin-left: 0
+	}
 
 	.navbar {
 		bottom: 0;
@@ -590,7 +589,11 @@ body.menu-toggled>.button>span {
 		flex-direction: column;
 	}
 
-	#skills {
+	/*#skills {
+		flex-direction: column;
+	}*/
+
+	.row {
 		flex-direction: column;
 	}
 
@@ -599,13 +602,12 @@ body.menu-toggled>.button>span {
 	}
 
 	.flex-row {
-
 		flex-direction: column;
 		height: fit-content;
 	}
 
 	footer {
-		margin: 6rem;
+		align-items: baseline;
 	}
 }
 
