@@ -12,7 +12,7 @@ This is my personal portfolio website showcasing my skills and experiences.
 
 ```bash
 
-itu-edu-ceylans20/
+semihbceylan.com/
 
 │── images/          # Icons and images
 
@@ -39,20 +39,13 @@ itu-edu-ceylans20/
 \- Contact form for inquiries
 
 
-
-\## 📸 Preview
-
-!\[Project Preview](images/ceylans20-preview.gif)
-
-
-
 \## 💻 Installation \& Usage
 
 1\. Clone the repository:
 
 ```bash
 
-git clone https://github.com/semihbceylan/itu-edu-ceylans20.git
+git clone https://github.com/semihbceylan/semihbceylan.com.git
 
 ```
 
@@ -60,7 +53,7 @@ git clone https://github.com/semihbceylan/itu-edu-ceylans20.git
 
 \## 🚀 Live Demo
 
-🔗 \[View Portfolio](https://web.itu.edu.tr/ceylans20/)
+🔗 \[View Portfolio](https://semihbceylan.com)
 
 
 
