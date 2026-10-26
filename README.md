@@ -1,31 +1,47 @@
 # My Portfolio Website
 
 ## 🚀 About the Project
-This is my personal portfolio website showcasing my skills and experiences.
+This is my personal portfolio website showcasing my experience, projects and skills.
 
 ## 📂 Folder Structure
 ```bash
 semihbceylan.com
-│── images/          # Icons and images
+│── images/
+│   ├── logos/            # Company & school logos (stored locally)
+│   ├── portfolio/        # Original project screenshots
+│   │   └── thumbs/       # Optimized .webp thumbnails used on the site
+│   └── portrait.webp     # Optimized hero photo (original: pp21.jpeg)
 │── index.html
 │── style.css
-│── app.js           # Blur animation
+│── app.js                # Animations, mobile menu, contact form
+│── contact.php           # Contact form mail handler
 │── README.md
 ```
 
 ## 📜 Features
 - Responsive design for all devices
-- Smooth navigation with a fixed sidebar
-- Sections for work experience, education, skills, and projects
-- Contact form for inquiries
+- Experience, projects, skills, education, awards and languages sections
+- Lazy-loaded images with reserved space (no layout shift while loading)
+- Working contact form (PHP) with spam protection
+- SEO and social share (Open Graph) tags
 
-## 💻 Installation & Usage
-1. Clone the repository:
-```bash
-git clone https://github.com/semihbceylan/semihbceylan.com.git
-```
+## 🌐 Deploying on cPanel (no shell needed)
+1. Open **cPanel → File Manager → public_html**.
+2. Upload `index.html`, `style.css`, `app.js`, `contact.php` and the `images/` folder.
+3. Contact form setup:
+   - In **cPanel → Email Accounts**, create `noreply@semihbceylan.com` (it only needs to exist).
+   - In **cPanel → Email Deliverability**, make sure SPF and DKIM show as valid (click *Repair* if not).
+     Without this, Gmail may put the messages in spam.
+   - To change the recipient or sender, edit the settings at the top of `contact.php`.
+4. Send a test message from the live site.
 
-2. Open `index.html` in a browser.
+### Resume
+Upload your CV as `resume.pdf` into `public_html`. The **Resume** button switches to it
+automatically; until then it links to LinkedIn.
+
+## 💻 Local preview
+Open `index.html` in a browser. The contact form needs PHP, so test it on the live server
+(or run `php -S localhost:8000` locally).
 
 ## 🚀 Live Demo
 🔗 [View Portfolio](https://semihbceylan.com)

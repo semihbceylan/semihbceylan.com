@@ -1,2 +1,3 @@
 previews/
 .well-known/acme-challenge/
+.DS_Store
