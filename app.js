@@ -97,7 +97,7 @@ const yearEl = document.getElementById('year');
 if (yearEl) yearEl.textContent = new Date().getFullYear();
 
 // ------------------------------------------
-// Contact form (sends to contact.php)
+// Contact form (Vercel serverless endpoint)
 // ------------------------------------------
 const form = document.getElementById('contact-form');
 
@@ -149,7 +149,7 @@ if (form) {
 		try {
 			const res = await fetch(form.action, {
 				method: 'POST',
-				body: new FormData(form),
+				body: new URLSearchParams(new FormData(form)),
 				headers: { 'Accept': 'application/json' }
 			});
 			const data = await res.json().catch(() => ({}));

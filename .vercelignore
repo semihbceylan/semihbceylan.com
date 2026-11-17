@@ -1,0 +1,5 @@
+.env*
+*.php
+test/
+README.md
+.DS_Store

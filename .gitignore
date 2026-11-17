@@ -1,3 +1,9 @@
 previews/
 .well-known/acme-challenge/
 .DS_Store
+.env*
+!.env.example
+.vercel/
+node_modules/
+public/
+test-smtp.php
